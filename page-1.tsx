@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Nav } from './nav';
-import { MainClient, NamedAPIResource } from 'pokenode-ts';
-import { Fragment, Suspense, useEffect, useState } from 'react';
+import { MainClient } from 'pokenode-ts';
+import { Fragment, Suspense, useState } from 'react';
 import { Button, Card } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 
@@ -97,7 +97,7 @@ function getPokemonList() {
   });
 }
 
-async function getPokemonDetails(name: string) {
+function getPokemonDetails(name: string) {
   const api = new MainClient();
 
   return new Promise((resolve, reject) => {
